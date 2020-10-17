@@ -1,0 +1,4 @@
+@ECHO OFF
+cd C:\Users\Sciencethebird\MC_Server
+java -Xms4G -Xmx4G -jar server.jar --port 69 --nogui
+pause

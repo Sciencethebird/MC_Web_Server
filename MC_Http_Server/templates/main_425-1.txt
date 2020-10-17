@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<title>Mi Server</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+#data {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#status {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mf {
+  font-size: 30px;
+  padding: 1px 30px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.mo {
+  font-size: 80px;
+  padding: 1px 32px;
+  color: {{ fcolor }};
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.button_red {
+  background-color: #CD5C5C;
+  border: none;
+  color: white;
+  #padding: 100px 100px;
+  width:45%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.button_red:hover {
+  background-color: #DC143C;
+  border: none;
+  color: white;
+  width:45%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  cursor: pointer;
+}
+  
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  #padding: 100px 100px;
+  width:45%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  cursor: pointer;
+}
+  
+.button:hover {
+  background-color: #228B22;
+  border: none;
+  color: white;
+  width:45%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+ /* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  
+}
+  
+ .p_bar {
+  background-color: #f1f1f1;
+  display: inline-block;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 90%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}  
+  
+.msg_bar {
+  background-color: #f1f1f1;
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  width: 90%;
+  margin-top: 50px;
+  margin-bottom: 0px;
+}  
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin: 80px 20px;
+}  
+.examplepreline { 
+    white-space:pre-wrap; 
+}
+</style>
+
+<body>
+
+	<div class="topnav">
+		<h2 class="mf">Mi Server</h2>
+	</div>
+
+	
+	
+ 	<div class="w3-bar w3-black">
+    	<button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Play_Page')">Play</button>
+    	<button class="w3-bar-item w3-button tablink" onclick="openCity(event,'message_board')">Server Log</button>
+    	<button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Information</button>
+  	</div>
+  	
+  	<div id="Play_Page" class="w3-container w3-border city">
+	  
+    	<center> <h2 id="status">Waiting.....</h2></center>
+        
+		<center>
+        		<div class="msg_bar">
+ 					<div id="data">Press Start !</div>
+				</div>
+		</center>
+            
+		<center>
+        		<div class="p_bar">
+				<div align="left">
+					<div class="w3-border">
+ 						<div id="bar" class="progress-bar progress-bar-striped active" style="height:24px;width:10%"></div>
+					</div>
+ 				</div>
+			</div>
+   		</center>
+     
+                
+    	<script>$("#status").css('color', "#CD5C5C") </script>
+		<script>$("#status").css("fontSize", "100px")</script>
+		<script>$('#status').css("margin-top","60px")</script>
+		<script>$('#data').css("font-family","monospace")</script>
+                         
+		<center>
+        	<div class="w3-show-inline-block" style="width:100%">
+    			<a href="start" class="button" onclick="myFunction()">Start</a>
+ 				<a href="end" class="button_red" onclick="shut()">Stop</a>
+			</div>
+        	<br>
+            <br>
+            	<h2>Online Player</h2>
+                <br>
+  				<ul class="w3-ul w3-card" style="width:90%" id = "player_list">
+      				<li>Jill</li>
+ 				</ul>
+ 			<br>
+        </center>
+        	<div class="footer">
+ 			<center><p>LALALAND@140.113.121.93:777</p></center>
+		</div>
+                
+       		
+    		
+  	</div>
+
+  	<div id="message_board" class="w3-container w3-border city" style="display:none">
+  			
+			<div class="w3-container">
+            
+           		<h2>Server Log</h2>
+  				<div class="w3-panel w3-border w3-light-grey w3-round-large" id="board">No Message</div>
+			</div>
+			<script> board.style.whiteSpace="nowrap"</script>
+  	</div>
+
+  
+ 	<div id="Tokyo" class="w3-container w3-border city" style="display:none">
+    		<h2></h2>
+            <div class="w3-card-4" style="width:100%">
+    		<header class="w3-container w3-green">
+      			<h1>World Information</h1>
+    		</header>
+
+   				<div class="w3-container">
+                	<br>
+      				<p> Seed : -5349081756009153826</p>
+                    		<p> Difficulty: HARD </p>
+
+				<p> Home Coordinate: 300 65 -40 </p>
+                   	<br>
+    			</div>
+
+    			<footer class="w3-container w3-green">
+     				<h5>LALALAND@140.113.121.93:777</h5>
+    			</footer>
+ 			</div>
+            <br>
+            
+             <div class="w3-card-4" style="width:100%">
+    		<header class="w3-container w3-blue">
+      			<h1>Website Update</h1>
+    		</header>
+
+   				<div class="w3-container">
+                	<br>
+                    <p>2020/4/20: add progress bar and live message!</p>
+                    <p>2020/4/21: Different tabs and live server log !</p>
+      		    <p>2020/4/22: Now you can see online player list!</p>
+		    <p>2020/4/23: Minor Code Change...</p>
+                    <br>
+    			</div>
+
+    			<footer class="w3-container w3-blue">
+     				<h5>By Sciencethebird</h5>
+    			</footer>
+ 			</div>
+            
+    		<p></p>
+  	</div>
+
+
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+</script>
+
+<script>
+var i = 0;
+function myFunction() {
+  document.getElementById("status").innerHTML = "Waiting....";  
+  document.getElementById("data").innerHTML = "Allocating Memory.....";  
+  //document.getElementById("bar").style.width = "10%"; 
+}
+function shut() {
+  document.getElementById("status").style.color = "#CD5C5C";  
+  document.getElementById("status").innerHTML = "Stopping....";  
+  document.getElementById("data").innerHTML = "bye bye.....";  
+}
+</script>
+<script>
+
+function funcc(){
+	i++;
+    if()
+    setTimeout( funcc, 1000);
+}
+</script>
+{% for c, t, m, pgs, log, list in data: %}
+<script>
+	$("#data").text("{{ m }}")
+	$("#status").text("{{ t }}")
+	$("#status").css('color', "{{ c }}")
+	$("#bar").css('width', "{{ pgs }}")
+	$("#bar").text("{{ pgs }}")
+	$('#board').html("<pre>" + "{{ log }}" + "</pre>");
+    $('#player_list').html("{{ list }}");
+</script>
+{% endfor %}
+
+</body>
+</html>
+

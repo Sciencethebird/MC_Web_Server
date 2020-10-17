@@ -1,0 +1,97 @@
+<html>
+<head>
+<style>
+.mf {
+  font-size: 30px;
+  padding: 1px 32px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.mo {
+  font-size: 30px;
+  padding: 1px 32px;
+  color: {{ fcolor }};
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.button_red {
+  background-color: #CD5C5C;
+  border: none;
+  color: white;
+  padding: 50px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+
+.button_red:hover {
+  background-color: #DC143C;
+  border: none;
+  color: white;
+  padding: 50px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+  
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 50px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+  
+.button:hover {
+  background-color: #228B22;
+  border: none;
+  color: white;
+  padding: 50px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+ /* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin: 20px 20px;
+}  
+</style>
+</head>
+<body>
+
+<div class="topnav">
+ <h2 class="mf">Mi Server</h2>
+</div>
+
+<center> <h2 class="mo">{{ variable }}</h2>
+<center><a href="start" class="button">Start</a>
+<a href="end" class="button_red">Stop</a><center>
+
+<div class="footer">
+  <p>LALALAND@140.113.121.93:777</p>
+</div>
+</body>
+</html>
+
+
+

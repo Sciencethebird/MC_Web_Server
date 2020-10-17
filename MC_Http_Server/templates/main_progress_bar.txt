@@ -1,0 +1,182 @@
+<html>
+<head>
+<style>
+#data {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#status {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mf {
+  font-size: 30px;
+  padding: 1px 30px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.mo {
+  font-size: 80px;
+  padding: 1px 32px;
+  color: {{ fcolor }};
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.button_red {
+  background-color: #CD5C5C;
+  border: none;
+  color: white;
+  padding: 100px 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+
+.button_red:hover {
+  background-color: #DC143C;
+  border: none;
+  color: white;
+  padding: 101px 101px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+  
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 100px 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+  
+.button:hover {
+  background-color: #228B22;
+  border: none;
+  color: white;
+  padding: 101px 101px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+ /* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  
+}
+  
+ .p_bar {
+  background-color: #f1f1f1;
+  display: inline-block;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 610px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}  
+  
+.msg_bar {
+  background-color: #f1f1f1;
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  width: 610px;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}  
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin: 60px 20px;
+}  
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+
+<div class="topnav">
+ <h2 class="mf">Mi Server</h2>
+</div>
+  
+<center> <h2 id="status">Waiting.....</h2></center>
+
+<center><div class="msg_bar">
+ <div id="data">Press Start !</div>
+</div></center>
+
+<center><div class="p_bar">
+<div align="left">
+<div class="w3-border">
+ <div id="bar" class="progress-bar progress-bar-striped active" style="height:24px;width:10%"></div>
+</div>
+ </div>
+</div></center>
+  
+
+<script>$("#status").css('color', "#CD5C5C") </script>
+<script>$("#status").css("fontSize", "100px")</script>
+<script>$('#status').css("margin-top","60px")</script>
+<script>$('#data').css("font-family","monospace")</script>
+<center><a href="start" class="button" onclick="myFunction()">Start</a>
+  <a href="end" class="button_red" onclick="shut()">Stop</a></center>
+
+
+
+<div class="footer">
+  <p>LALALAND@140.113.121.93:777</p>
+</div>
+ 
+
+<script>
+
+function myFunction() {
+  document.getElementById("status").innerHTML = "Waiting....";  
+  document.getElementById("data").innerHTML = "Allocating Memory.....";  
+  //document.getElementById("bar").style.width = "10%"; 
+}
+function shut() {
+  document.getElementById("status").style.color = "#CD5C5C";  
+  document.getElementById("status").innerHTML = "Stopping....";  
+  document.getElementById("data").innerHTML = "bye bye.....";  
+}
+</script>
+
+
+{% for c, t, m, p in data: %}
+<script>
+  $("#data").text("{{ m }}")
+  $("#status").text("{{ t }}")
+  $("#status").css('color', "{{ c }}")
+  $("#bar").css('width', "{{ p }}")
+  $("#bar").text("{{ p }}")
+</script>
+{% endfor %}
+  
+</body>
+</html>
+
